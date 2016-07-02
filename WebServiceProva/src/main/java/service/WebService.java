@@ -56,7 +56,7 @@ public class WebService extends Application{
 		adocao.setDataCadastro(dataCadastro);
 		adocao.setCidade(cidade);
 		
-		dao.cadastrar(adocao);
+		dao.inserir(adocao);
 	}
 	
 	@POST
@@ -76,6 +76,7 @@ public class WebService extends Application{
 		denuncia.setLatitude(latitude);
 		denuncia.setLongitude(longitude);
 		
-		dao.cadastrar(denuncia);
+		dao.inserir(denuncia);
+		System.out.println("A denuncia chegou");
 	}
 }
