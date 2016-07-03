@@ -31,8 +31,7 @@ public class TestDAOGenerico {
 		Assert.assertEquals("Animal feio pacaramba", denuncia.getDescricaoAnimal());
 		
 		//Testar excluir denuncia
-		Long id3 = denuncia.getId();
 		daoGenerico.excluirDenuncia(denuncia.getId());
-		Assert.assertNotNull(denuncia.getDescricaoAnimal());
+		Assert.assertNotNull(denuncia);
 	}
 }

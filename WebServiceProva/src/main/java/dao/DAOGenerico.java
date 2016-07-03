@@ -120,7 +120,7 @@ public class DAOGenerico {
 		Object retornando = null;
 		try {
 			entityManager.getTransaction().begin();
-			retornando = entityManager.find(classe, id);
+			retornando = entityManager.find(classe, id);	
 			entityManager.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -131,9 +131,10 @@ public class DAOGenerico {
 	}
 //	EXCLUIR Denuncia
   public void excluirDenuncia(Long id){
+	  entityManager = Banco.getConexao().getEm();
+	  entityManager.getTransaction().begin();
       Denuncia exclusao=entityManager.find(Denuncia.class, id);
-      entityManager.getTransaction().begin();
       entityManager.remove(exclusao);
-      entityManager.getTransaction().commit();       
+      entityManager.getTransaction().commit();
   }
 }
